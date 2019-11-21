@@ -1,0 +1,2 @@
+(* Intersection takes in multiple sets and creates a list of matching elements in all sets
+    Ex: Intersect([1,1,1,2,2],[1,1,2,3],[2,3,5,5],[3,5,7,4]) = [] there is no overlaping element in all sets *)
