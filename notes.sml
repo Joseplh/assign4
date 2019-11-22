@@ -70,10 +70,15 @@ fun test primes =
     in
         validateNonPrime nonPrimeList
     end;
-    fun delete(x, []) = [](*removes an element from a list*)
-      | delete(x,y::l) = if x=y then delete(x,l) else y::delete(x,l);
-    fun removeDuplicate [] = [](*removes all duplicate elements*)
-      | removeDuplicate (x::l) = x::removeDuplicate(delete(x,l));
-    fun simpleMerge [] = []
-      | simpleMerge (x::l) = x @ simpleMerge l;
+fun delete(x, []) = [](*removes an element from a list*)
+  | delete(x,y::l) = if x=y then delete(x,l) else y::delete(x,l);
+fun removeDuplicate [] = [](*removes all duplicate elements*)
+  | removeDuplicate (x::l) = x::removeDuplicate(delete(x,l));
+fun simpleMerge [] = []
+  | simpleMerge (x::l) = x @ simpleMerge l;
+
+fun sum_pair_list (xs : (int * int) list) =
+  if null xs
+  then 0
+  else #1 (hd xs) + #2 (hd xs) + sum_pair_list(tl xs)
 
