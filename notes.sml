@@ -81,4 +81,15 @@ fun sum_pair_list (xs : (int * int) list) =
   if null xs
   then 0
   else #1 (hd xs) + #2 (hd xs) + sum_pair_list(tl xs)
-
+(*sum_pair_list [(3,4),(5,6)] -> val it = 18 or (3+5)+(4+6)*)
+fun map f =
+  let
+    fun m nil = nil
+      | m (x::xs) = f x :: m xs
+  in
+    m
+  end;
+fun sq x = x*x;
+val sqList = map sq;
+sqList [1,2,3,4];
+map sqList [[1,2],[3,4],[5,6]];

@@ -29,4 +29,5 @@
     Ex: [1]@[2]     -> [1,2]
     Ex: []@[1]      -> [1]
     Ex: special []::[]->[[]]*)
-(*  *)
+(*  hd [x] is the first element of the list
+    tl [x] is the list after the "head"*)
